@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    //EXPRESSAO
     <TextView
         android:id="@+id/expressao"
         android:layout_width="match_parent"
@@ -19,6 +20,7 @@
         android:singleLine="true"
         android:text="" />
 
+    //RESULTADO
     <TextView
         android:id="@+id/txt_resultado"
         android:layout_width="match_parent"

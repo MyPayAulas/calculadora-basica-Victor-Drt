@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    //CORES A SEREM USADAS
     <color name="colorPrimary">#FF9C27B0</color>
     <color name="colorPrimaryDark">#FF673AB7</color>
     <color name="colorAccent">#FF65FF3B</color>

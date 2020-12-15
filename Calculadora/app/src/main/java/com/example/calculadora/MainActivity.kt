@@ -46,6 +46,7 @@ class MainActivity : AppCompatActivity() {
             txt_resultado.text = ""
         }
 
+        //LISTENER DO BOTAO IGUAL
         igual.setOnClickListener {
             try {
                 val expressao = ExpressionBuilder(expressao.text.toString()).build()
@@ -64,6 +65,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //FUNÇAO PARA MOSTRAR EXPRESSOES
     fun AcrescentarUmaExpressao(string: String, limpar_dados: Boolean){
 
         if(txt_resultado.text.isNotEmpty()){

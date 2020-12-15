@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    //ESTILOS A SEREM IMPORTADOS PARA OS BOTOES
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customisar o tema aqui. -->
         <item name="colorPrimary">@color/colorPrimary</item>
