@@ -14,46 +14,32 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar!!.hide()
 
-        botao_historico.setOnClickListener{
+        botao_historico.setOnClickListener {
             val intent = Intent(this, HistoricoActivityCustomizada::class.java)
-            intent.putExtra("testeVarString", "meu texto")
-            intent.putExtra("testeVarInteiro", 55)
 
-            val expressao = ExpressionBuilder(expressao.text.toString()).build()
+                try {
+                    val expressao = ExpressionBuilder(expressao.text.toString()).build()
 
-            val resultado = expressao.evaluate()
-            val resultadoLongo = resultado.toLong()
+                    val resultado = expressao.evaluate()
+                    val resultadoLongo = resultado.toLong()
 
-            val historico = HistoricoCalculos(mutableListOf())
-            historico.listaCalculos.add(Calculo(expressao, resultadoLongo))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            historico.listaCalculos.add(Calculo("2*5", "10"))
-            intent.putExtra("testeObjeto", historico)
-            startActivity(intent)
-        }
+                    if(resultado == resultadoLongo.toDouble()){
+                        txt_resultado.text = resultadoLongo.toString()
+                    }else{
+                        txt_resultado.text = resultado.toString()
+                    }
+                }catch (e:Exception){
+
+                }
+
+                val historico = HistoricoCalculos(mutableListOf())
+                historico.listaCalculos.add(Calculo("${expressao.text}", "${txt_resultado.text}")).toString()
+                intent.putExtra("testeObjeto", historico)
+                startActivity(intent)
+            }
+
+
+
 
         //LISTENER DOS NUMEROS
         numero_zero.setOnClickListener{AcrescentarUmaExpressao(string = "0", limpar_dados = true)}
@@ -123,3 +109,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
+
+
