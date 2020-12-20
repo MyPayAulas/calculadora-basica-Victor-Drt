@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     //EXPRESSAO
+
     <TextView
         android:id="@+id/expressao"
         android:layout_width="match_parent"
@@ -33,6 +34,13 @@
         android:ellipsize="end" />
 
     //PRIMEIRA LINHA DE BOTOES
+
+    <Button
+        android:id="@+id/botao_historico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Historico" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"

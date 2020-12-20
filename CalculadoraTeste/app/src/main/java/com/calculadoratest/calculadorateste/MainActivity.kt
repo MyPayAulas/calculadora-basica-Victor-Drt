@@ -1,5 +1,6 @@
 package com.calculadoratest.calculadorateste
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -12,6 +13,47 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         supportActionBar!!.hide()
+
+        botao_historico.setOnClickListener{
+            val intent = Intent(this, HistoricoActivityCustomizada::class.java)
+            intent.putExtra("testeVarString", "meu texto")
+            intent.putExtra("testeVarInteiro", 55)
+
+            val expressao = ExpressionBuilder(expressao.text.toString()).build()
+
+            val resultado = expressao.evaluate()
+            val resultadoLongo = resultado.toLong()
+
+            val historico = HistoricoCalculos(mutableListOf())
+            historico.listaCalculos.add(Calculo(expressao, resultadoLongo))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            historico.listaCalculos.add(Calculo("2*5", "10"))
+            intent.putExtra("testeObjeto", historico)
+            startActivity(intent)
+        }
 
         //LISTENER DOS NUMEROS
         numero_zero.setOnClickListener{AcrescentarUmaExpressao(string = "0", limpar_dados = true)}
