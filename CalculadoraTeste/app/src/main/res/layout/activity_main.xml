@@ -10,7 +10,7 @@
     //EXPRESSAO
 
     <TextView
-        android:id="@+id/expressao"
+        android:id="@+id/txtExpressao"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:textColor="@color/black"
@@ -23,7 +23,7 @@
 
     //RESULTADO
     <TextView
-        android:id="@+id/txt_resultado"
+        android:id="@+id/txtResultado"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:textColor="@color/black"
@@ -36,7 +36,7 @@
     //PRIMEIRA LINHA DE BOTOES
 
     <Button
-        android:id="@+id/botao_historico"
+        android:id="@+id/btHistorico"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Historico" />

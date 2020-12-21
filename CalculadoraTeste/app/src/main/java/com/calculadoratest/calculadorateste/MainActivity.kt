@@ -4,108 +4,108 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
-import net.objecthunter.exp4j.Expression
 import net.objecthunter.exp4j.ExpressionBuilder
 
 class MainActivity : AppCompatActivity() {
+    val historico = HistoricoCalculos(mutableListOf())
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         supportActionBar!!.hide()
 
-        botao_historico.setOnClickListener {
+        btHistorico.setOnClickListener {
             val intent = Intent(this, HistoricoActivityCustomizada::class.java)
 
-                try {
-                    val expressao = ExpressionBuilder(expressao.text.toString()).build()
+            try {
+                val expressao = ExpressionBuilder(txtExpressao.text.toString()).build()
 
-                    val resultado = expressao.evaluate()
-                    val resultadoLongo = resultado.toLong()
+                val resultado = expressao.evaluate()
+                val resultadoLong = resultado.toLong()
 
-                    if(resultado == resultadoLongo.toDouble()){
-                        txt_resultado.text = resultadoLongo.toString()
-                    }else{
-                        txt_resultado.text = resultado.toString()
-                    }
-                }catch (e:Exception){
-
+                if (resultado == resultadoLong.toDouble()) {
+                    txtResultado.text = resultadoLong.toString()
+                } else {
+                    txtResultado.text = resultado.toString()
                 }
 
-                val historico = HistoricoCalculos(mutableListOf())
-                historico.listaCalculos.add(Calculo("${expressao.text}", "${txt_resultado.text}")).toString()
+                historico.listaCalculos.add(Calculo("${txtExpressao.text}", "${txtResultado.text}"))
                 intent.putExtra("testeObjeto", historico)
                 startActivity(intent)
+
+            } catch (e: Exception) {
+
             }
 
-
+        }
 
 
         //LISTENER DOS NUMEROS
-        numero_zero.setOnClickListener{AcrescentarUmaExpressao(string = "0", limpar_dados = true)}
-        numero_um.setOnClickListener{AcrescentarUmaExpressao(string = "1", limpar_dados = true)}
-        numero_dois.setOnClickListener{AcrescentarUmaExpressao(string = "2", limpar_dados = true)}
-        numero_tres.setOnClickListener{AcrescentarUmaExpressao(string = "3", limpar_dados = true)}
-        numero_quatro.setOnClickListener{AcrescentarUmaExpressao(string = "4", limpar_dados = true)}
-        numero_cinco.setOnClickListener{AcrescentarUmaExpressao(string = "5", limpar_dados = true)}
-        numero_seis.setOnClickListener{AcrescentarUmaExpressao(string = "6", limpar_dados = true)}
-        numero_sete.setOnClickListener{AcrescentarUmaExpressao(string = "7", limpar_dados = true)}
-        numero_oito.setOnClickListener{AcrescentarUmaExpressao(string = "8", limpar_dados = true)}
-        numero_nove.setOnClickListener{AcrescentarUmaExpressao(string = "9", limpar_dados = true)}
-        ponto.setOnClickListener{AcrescentarUmaExpressao(string = ".", limpar_dados = true)}
+        numero_zero.setOnClickListener { AcrescentarUmaExpressao(string = "0", limpar_dados = true) }
+        numero_um.setOnClickListener { AcrescentarUmaExpressao(string = "1", limpar_dados = true) }
+        numero_dois.setOnClickListener { AcrescentarUmaExpressao(string = "2", limpar_dados = true) }
+        numero_tres.setOnClickListener { AcrescentarUmaExpressao(string = "3", limpar_dados = true) }
+        numero_quatro.setOnClickListener { AcrescentarUmaExpressao(string = "4", limpar_dados = true) }
+        numero_cinco.setOnClickListener { AcrescentarUmaExpressao(string = "5", limpar_dados = true) }
+        numero_seis.setOnClickListener { AcrescentarUmaExpressao(string = "6", limpar_dados = true) }
+        numero_sete.setOnClickListener { AcrescentarUmaExpressao(string = "7", limpar_dados = true) }
+        numero_oito.setOnClickListener { AcrescentarUmaExpressao(string = "8", limpar_dados = true) }
+        numero_nove.setOnClickListener { AcrescentarUmaExpressao(string = "9", limpar_dados = true) }
+        ponto.setOnClickListener { AcrescentarUmaExpressao(string = ".", limpar_dados = true) }
 
         //LISTENER DOS OPERADORES
-        adicao.setOnClickListener{AcrescentarUmaExpressao(string = "+", limpar_dados = false)}
-        subtracao.setOnClickListener{AcrescentarUmaExpressao(string = "-", limpar_dados = false)}
-        multiplicacao.setOnClickListener{AcrescentarUmaExpressao(string = "*", limpar_dados = false)}
-        divisao.setOnClickListener{AcrescentarUmaExpressao(string = "/", limpar_dados = false)}
+        adicao.setOnClickListener { AcrescentarUmaExpressao(string = "+", limpar_dados = false) }
+        subtracao.setOnClickListener { AcrescentarUmaExpressao(string = "-", limpar_dados = false) }
+        multiplicacao.setOnClickListener { AcrescentarUmaExpressao(string = "*", limpar_dados = false) }
+        divisao.setOnClickListener { AcrescentarUmaExpressao(string = "/", limpar_dados = false) }
 
         //LISTENER DOS BOTOES DE APAGAR
-        limpar.setOnClickListener{
-            expressao.text = ""
-            txt_resultado.text = ""
+        limpar.setOnClickListener {
+            txtExpressao.text = ""
+            txtResultado.text = ""
         }
 
         backspace.setOnClickListener {
 
-            val string = expressao.text.toString()
-            if(string.isNotBlank()){
-                expressao.text = string.substring(0, string.length-1)
+            val string = txtExpressao.text.toString()
+            if (string.isNotBlank()) {
+                txtExpressao.text = string.substring(0, string.length - 1)
             }
-            txt_resultado.text = ""
+            txtResultado.text = ""
         }
 
         igual.setOnClickListener {
             try {
-                val expressao = ExpressionBuilder(expressao.text.toString()).build()
+                val expressao = ExpressionBuilder(txtExpressao.text.toString()).build()
 
                 val resultado = expressao.evaluate()
-                val resultadoLongo = resultado.toLong()
+                val resultadoLong = resultado.toLong()
 
-                if(resultado == resultadoLongo.toDouble()){
-                    txt_resultado.text = resultadoLongo.toString()
-                }else{
-                    txt_resultado.text = resultado.toString()
+                if (resultado == resultadoLong.toDouble()) {
+                    txtResultado.text = resultadoLong.toString()
+                } else {
+                    txtResultado.text = resultado.toString()
                 }
-            }catch (e:Exception){
-                
+            } catch (e: Exception) {
+
             }
         }
     }
 
-    fun AcrescentarUmaExpressao(string: String, limpar_dados: Boolean){
+    fun AcrescentarUmaExpressao(string: String, limpar_dados: Boolean) {
 
-        if(txt_resultado.text.isNotEmpty()){
-            expressao.text = ""
+        if (txtResultado.text.isNotEmpty()) {
+            txtExpressao.text = ""
         }
 
-        if(limpar_dados){
-            txt_resultado.text = ""
-            expressao.append(string)
-        }else{
-            expressao.append(txt_resultado.text)
-            expressao.append(string)
-            txt_resultado.text = ""
+        if (limpar_dados) {
+            txtResultado.text = ""
+            txtExpressao.append(string)
+        } else {
+            txtExpressao.append(txtResultado.text)
+            txtExpressao.append(string)
+            txtResultado.text = ""
         }
     }
 }
