@@ -4,34 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     //MOSTRADORES DE RESULTADO E EXPRESSAO
+
     <TextView
-        android:id="@+id/expressao"
+        android:id="@+id/txtExpressao"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:textColor="@color/darkBlue"
-        android:textSize="40sp"
         android:layout_marginEnd="10dp"
-        android:gravity="end"
         android:ellipsize="start"
+        android:gravity="end"
         android:singleLine="true"
-        android:text="" />
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="40sp" />
 
     <TextView
-        android:id="@+id/txt_resultado"
+        android:id="@+id/txtResultado"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:textColor="@color/darkBlue"
-        android:textSize="30sp"
         android:layout_margin="10dp"
+        android:ellipsize="end"
         android:gravity="end"
         android:maxLines="1"
-        android:ellipsize="end" />
+        android:textColor="@color/white"
+        android:textSize="30sp" />
 
     //PRIMEIRA LINHA DE BOTOES
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -40,8 +43,7 @@
 
         <TextView
             android:id="@+id/limpar"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Operadores"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshape"
@@ -49,13 +51,13 @@
             android:shadowDx="3"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Operadores"
-            android:text="C"/>
+            android:text="C"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/divisao"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Operadores"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshape"
@@ -63,22 +65,23 @@
             android:shadowDx="3"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Operadores"
-            android:text="/"/>
+            android:text="/"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
     </LinearLayout>
 
     //SEGUNDA LINHA DE BOTOES
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/numero_sete"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Numeros"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshapenormal"
@@ -86,13 +89,13 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Numeros"
-            android:text="7"/>
+            android:text="7"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/numero_oito"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Numeros"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshapenormal"
@@ -100,13 +103,13 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Numeros"
-            android:text="8"/>
+            android:text="8"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/numero_nove"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Numeros"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshapenormal"
@@ -114,13 +117,13 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Numeros"
-            android:text="9"/>
+            android:text="9"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/multiplicacao"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Operadores"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshape"
@@ -128,22 +131,23 @@
             android:shadowDx="3"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Operadores"
-            android:text="x"/>
+            android:text="x"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
     </LinearLayout>
 
     //TERCEIRA LINHA DE BOTOES
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/numero_quatro"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Numeros"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshapenormal"
@@ -151,13 +155,13 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Numeros"
-            android:text="4"/>
+            android:text="4"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/numero_cinco"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Numeros"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshapenormal"
@@ -165,13 +169,13 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Numeros"
-            android:text="5"/>
+            android:text="5"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/numero_seis"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Numeros"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshapenormal"
@@ -179,13 +183,13 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Numeros"
-            android:text="6"/>
+            android:text="6"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/subtracao"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Operadores"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshape"
@@ -193,22 +197,23 @@
             android:shadowDx="3"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Operadores"
-            android:text="-"/>
+            android:text="-"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
     </LinearLayout>
 
     //QUARTA LINHA DE BOTOES
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_height="2dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/numero_um"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Numeros"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshapenormal"
@@ -216,13 +221,13 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Numeros"
-            android:text="1"/>
+            android:text="1"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/numero_dois"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Numeros"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshapenormal"
@@ -230,13 +235,13 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Numeros"
-            android:text="2"/>
+            android:text="2"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/numero_tres"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Numeros"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshapenormal"
@@ -244,13 +249,13 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Numeros"
-            android:text="3"/>
+            android:text="3"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/adicao"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Operadores"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshape"
@@ -258,22 +263,23 @@
             android:shadowDx="3"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Operadores"
-            android:text="+"/>
+            android:text="+"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
     </LinearLayout>
 
     //QUINTA LINHA DE BOTOES
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/ponto"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Numeros"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshapenormal"
@@ -281,13 +287,13 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Numeros"
-            android:text="."/>
+            android:text="."
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/numero_zero"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Numeros"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshapenormal"
@@ -295,28 +301,28 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Numeros"
-            android:text="0"/>
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
         <ImageView
             android:id="@+id/backspace"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Numeros"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshapenormal"
+            android:scaleType="center"
             android:shadowColor="#A8A8A8"
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Numeros"
-            android:scaleType="center"
-            android:src="@drawable/backspace"/>
+            android:src="@drawable/backspace"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/igual"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
+            style="@style/Botao_Operadores"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshape"
@@ -324,10 +330,20 @@
             android:shadowDx="3"
             android:shadowDy="0"
             android:shadowRadius="5"
-            style="@style/Botao_Operadores"
-            android:text="=" />
+            android:text="="
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btHistorico"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elegantTextHeight="true"
+        android:text="Historico"
+        android:textSize="36sp"
+        app:cornerRadius="100dp" />
 
 
 </LinearLayout>
